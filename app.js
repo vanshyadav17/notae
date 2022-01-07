@@ -27,15 +27,17 @@ app.get('/', (req, res) => {
 });
 
 app.get('/auth', (req, res) => {
+    console.log(req.body);
     if(validateCredentials(req.body.email, req.body.password)) {
         const user = getUserFromEmail(req.body.email);
+        
         if(getSessionFromID(user.id) != null) {
             deleteSession(user.id);
         }
         createNewSession(user.id);
         res.json({
             status: "OK",
-            token: getSessionFromID(user.id)
+            token: getSessionFromID(user.id).token
         })
     } else {
         res.json({
@@ -43,8 +45,6 @@ app.get('/auth', (req, res) => {
         })
     }
 })
-
-
 
 function createUser(email, password, name) {
     userData.accounts.push({
