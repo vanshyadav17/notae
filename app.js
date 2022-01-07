@@ -7,6 +7,7 @@ const data = require('./data/data.json');
 const userData = require('./data/users.json');
 const sessionData = require('./data/sessions.json');
 
+
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
 });
@@ -16,8 +17,34 @@ const app = express();
 const port = data.config.port;
 
 app.listen(port, '0.0.0.0', () => console.log(`(notae) started server on port ${port}!`));
+app.use(bodyParser.json());
 
-console.log(validateSession("XYZ987"));
+
+app.get('/', (req, res) => {
+    res.json({
+        status: "hello there"
+    });
+});
+
+app.get('/auth', (req, res) => {
+    if(validateCredentials(req.body.email, req.body.password)) {
+        const user = getUserFromEmail(req.body.email);
+        if(getSessionFromID(user.id) != null) {
+            deleteSession(user.id);
+        }
+        createNewSession(user.id);
+        res.json({
+            status: "OK",
+            token: getSessionFromID(user.id)
+        })
+    } else {
+        res.json({
+            status: "FAILED"
+        })
+    }
+})
+
+
 
 function createUser(email, password, name) {
     userData.accounts.push({
@@ -28,6 +55,26 @@ function createUser(email, password, name) {
         session: "none"
     });
     saveUserData();
+}
+
+function getUserFromEmail(email) {
+    let userToReturn = null;
+    userData.accounts.forEach((account) => {
+        if(account.email === email) {
+            userToReturn = account;
+        }
+    })
+    return userToReturn;
+}
+
+function getUserFromID(id) {
+    let userToReturn = null;
+    userData.accounts.forEach((account) => {
+        if(account.id === id) {
+            userToReturn = account;
+        }
+    })
+    return userToReturn;
 }
 
 function deleteUser(email) {
@@ -83,8 +130,8 @@ function validateSession(token) {
     return hasValidSession;
 }
 
-function getSession(id) {
-    let sessionToReturn;
+function getSessionFromID(id) {
+    let sessionToReturn = null;
     sessionData.sessions.forEach((session) => {
         if (session.id == id){
             sessionToReturn = session;
@@ -93,8 +140,8 @@ function getSession(id) {
     return sessionToReturn;
 }
 
-function getSession(token) {
-    let sessionToReturn;
+function getSessionFromToken(token) {
+    let sessionToReturn = null;
     sessionData.sessions.forEach((session) => {
         if (session.token == token){
             sessionToReturn = session;
