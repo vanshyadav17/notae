@@ -1,0 +1,22 @@
+{
+ "notes": [
+  {
+   "subject": "Mathematics",
+   "topic": "Complex Analysis",
+   "date": "2021-01-08",
+   "content": "Complex analysis, traditionally known as the theory of functions of a complex variable, is the branch of mathematical analysis that investigates functions of complex numbers. It is helpful in many branches of mathematics, including algebraic geometry, number theory, analytic combinatorics, applied mathematics; as well as in physics, including the branches of hydrodynamics, thermodynamics, and particularly quantum mechanics. By extension, use of complex analysis also has applications in engineering fields such as nuclear, aerospace, mechanical and electrical engineering.",
+   "id": "74AS"
+  },
+  {
+   "subject": "English",
+   "topic": "Carol Ann Duffy",
+   "date": "2021-05-03",
+   "content": "I quite like Carol Ann Duffy, she reminds me of great poets.",
+   "id": "A378"
+  }
+ ],
+ "shorthands": {
+  "wef": "with effect from",
+  "tmmrw": "tomorrow"
+ }
+}

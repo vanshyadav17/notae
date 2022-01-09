@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "notae-cloud-vision",
+  "private_key_id": "82d19f002b6bef7e4b13b8790ed6f6804bae25f4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCL/t7cNezToZ2K\nuGV8cdAy6LIQCFSx+n7BDyaa10CM93PajrNiafnHPrTSv7aOqWGGbzPC6udR33Qy\nYqt7j4zvqCM6ASU2JvLjIUKpEe8kY/cRpSd+IhJedKlGQdeWMRhhxIMaGxUqsyZl\nyd0aK6TOZOQrcxRNnUI/Q8oDbW99YdjKJfPh63ARUrytnuq0PIFqKQQwlyQSODwM\nq8ESjXAP7cpOt5QrkwGwsKlg1qYjFsidI0yZ9jUphgyUYO2KztjtN6Wcbgo70/u8\nm9qlciTug2KChTPlfEEUKTfp2PH2MYnussgbMUdQ9MAqX8c3dXaQforA4kklCFEI\nT20GuqgNAgMBAAECggEABE9MkRRDdtoyLy5qD6CyO3ffwaxf+48fuSsfyq3aoN/l\nUWDtepevRtZSPsKuz9e81t2JhxCiAYcEpBI6cT1ZbSg3SBL3noWaNtUlvVHTWqZU\nvQ9vbAgytljPvF1Mw8FaR3g8JW8mrFUuOouHsP5WhZ+kLM3PQYjfY6umW8Q1l4+e\nzXxfg4CBb+JjXO5kW4V41LF2yTRSFRkkyB7SqZ2fzi02tKB7GTQLi5WYSizNWPlT\nT0SNuyRdadbT47aDGX9mjgRbj990UsS6wFLpoGnHvsZ/1dN6HgqHZbKjpljmiv2W\nUVN2zXD9LkyxYmAevLZXRBRPXJif+mdCPp7duCXdCQKBgQDEN/P++Ok9Dxv40Oty\nbr2RrnBGCk4/LIjfmokIZvgp87no2srcNje+EPoWDVnSlaj8J/6Z3udGkA1MCo/q\nAvLtqRtKlBjiSRvnEkd1gHDWOmz3xbf8CMTVuy+/F6ZQsdKgRg9avKeouh0z5VAT\nuM8xMLeNGv28431dfl62URYaOwKBgQC2pc/fqmF4aIGjjNmndLgadXlPMcLvtsdm\nb7RYAwqz9mb5cMHPO5dI+M/T5eqvkskXskNyc7xxIBwTMxaOn/0Sa8CvMwjqMl3w\njWoADzpNMeZDgKHNVsFjQSS5aGrpLt5A1zDnNMazH02QZFaWiyxSbrDe6UHHVtDE\n8dFfOg1aVwKBgGTDcxpxypzfgHbTGsXmFpWUZfWh3zLT9OoXGt3kuvYYQlVQ3jId\n6ZxCbZsbehAJaQEsrLNp44y59wogtmzu3L+tQuWWjfzOnHSaT3YI4mkxEbpfn67e\n9e3oNYnFZFQ2LTq/H61yCgs8oDiBPxERq9zP7sKYpMr2a++yMIMhut73AoGAYsZV\nHs5Tm/xYb4xSgN78WULCcfOlSmH8gAdU7mvms+BDXA6AoYPGku4L5rpmKsElAy2i\nkBjLBhqpVDDCuCsJf5bKQ3VEEvNeHiM7+gBCNVERB9xepF+Qgg7Ov34aozR3eXVm\nuwKtml0JY1cABLYLKCE4gbR/oD/w8zEbW3ZXlk0CgYAzEmLKD7q6CXQcmWKcT69+\nNhYpWPVb6CABq5EzCxdi51TLRjmjcOOgRbqv+RZ3F2q2B0mLUmYR9kK8FFtIatLG\nSDrVdT4Y5+36Cw6InzMJOSzKesHbkmecvZlYI2soFmteumwi+YGLbbUy36MRfRnG\nNDJ7mwgazmSmC/fzcpcfAA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "notaec@notae-cloud-vision.iam.gserviceaccount.com",
+  "client_id": "108895062509211319983",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/notaec%40notae-cloud-vision.iam.gserviceaccount.com"
+}

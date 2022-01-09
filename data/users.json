@@ -5,6 +5,13 @@
    "password": "abc123",
    "name": "Test User",
    "id": "abc123"
+  },
+  {
+   "email": "vansh.yadav@pathways.in",
+   "password": "vansh1712",
+   "name": "Vansh Yadav",
+   "id": "27H7G0",
+   "session": "none"
   }
  ]
 }

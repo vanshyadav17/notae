@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&family=Poppins&display=swap"
+        rel="stylesheet">
+
+    <title>Notae</title>
+
+</head>
+
+<body style="font-family:'Nunito Sans', sans-serif;">
+
+    <div class="relative min-h-screen md:flex">
+
+        <div class="bg-red-600 text-red-100 flex justify-between md:hidden">
+            <!-- logo -->
+            <a href="#" class="block p-4 text-white font-bold">Notae</a>
+
+            <!-- mobile menu button -->
+            <button class="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <div style="background-color: #f3f3f3; background-image: linear-gradient(350deg, #f3f3f3 0%, #fa5f67 0%);"
+            class="text-red-100 w-40 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+
+
+            <a href="#" class="text-white flex items-center space-x-2 px-4 pt-6">
+                <span class="text-2xl font-bold">Notae</span>
+            </a>
+            <nav>
+                <a href="/home"
+                    class="block py-3 px-4 rounded transition duration-200 hover:bg-red-400 hover:text-white">
+                    Home
+                </a>
+                <a href="/notes"
+                    class="block py-3 px-4 rounded transition duration-200 hover:bg-red-400 hover:text-white">
+                    My Notes
+                </a>
+                <a href="/add"
+                    class="block py-3 px-4 rounded transition duration-200 hover:bg-red-400 hover:text-white">
+                    Add Note
+                </a>
+                <a href="/logout"
+                    class="block py-3 px-4 rounded transition duration-200 hover:bg-red-400 hover:text-white">
+                    Logout
+                </a>
+            </nav>
+        </div>
+
+        <div class="flex-1 p-10 text-xl font-bold">
+
+
+            <div class="flex">
+                <div class="mb-3 w-96">
+                    <label for="formFile" class="form-label inline-block mb-2 text-gray-700">Upload an image to create a note</label>
+                    <input class="form-control
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        mt-5
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                        type="file" id="note" name="note" accept="image/png">
+                </div>
+            </div>
+
+            <p class="text-gray-700 mt-4 text-base font-light" id="loading"></p>
+
+            <script>
+                const fileSelector = document.getElementById('note');
+                const loadingText = document.getElementById('loading');
+
+                fileSelector.addEventListener('change', (event) => {
+                    const file = event.target.files[0];
+
+                    const reader = new FileReader();
+                    reader.addEventListener('load', event => {
+                        const encodedString = event.target.result.replace('data:image/png;base64,', '');
+
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('POST', '/addimg');
+                        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+                        const body = {
+                            "encoded": encodedString
+                        }
+
+                        xhr.send(JSON.stringify(body));
+
+                        xhr.onload = () => {
+                            console.log(xhr.response);
+                            window.location.href = xhr.response;
+                        }
+
+
+
+                        // loadingText.innerHTML = encodedString;
+
+                        //  console.log(event.target.result);
+
+                    });
+                    loadingText.innerHTML = "Processing...";
+                    reader.readAsDataURL(file);
+                })
+
+                function readImage(file) {
+                    if (file.type && !file.type.startsWith('image/')) {
+                        console.log('File is not an image.', file.type, file);
+                        return;
+                    }
+
+                    const reader = new FileReader();
+
+                    reader.addEventListener('load', (event) => {
+                        img.src = event.target.result;
+                    });
+
+                    reader.readAsDataURL(file);
+                }
+            </script>
+        </div>
+
+    </div>
+
+    <script>
+        // grab everything we need
+        const btn = document.querySelector(".mobile-menu-button");
+        const sidebar = document.querySelector(".sidebar");
+
+        // add our event listener for the click
+        btn.addEventListener("click", () => {
+            sidebar.classList.toggle("-translate-x-full");
+        });
+    </script>
+
+    <body>
+
+    </body>
+
+</html>
